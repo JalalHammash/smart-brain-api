@@ -24,7 +24,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req,res)=>{res.send(database.users) })
+app.get('/', (req,res)=>{res.send('it is working!') })
 app.post('/signin', signin.handleSignin(db, bcrypt)) // this function will run wit db and bcrybt, then it will run with req and res (advanced function topic)
 app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt)})
 app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)})
